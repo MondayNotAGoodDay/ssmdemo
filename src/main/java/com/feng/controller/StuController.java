@@ -105,6 +105,9 @@ public class StuController {
         System.out.println(picture.getOriginalFilename());
         System.out.println(picture.getName());
         System.out.println(picture.getSize());
+        System.out.println("fuck");
+        System.out.println("fuck twice");
+        System.out.println("fuck three");
         return "success";
     }
 }
