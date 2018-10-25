@@ -1,4 +1,4 @@
-package com.feng.validate;
+package com.feng.common.validator;
 
 import com.feng.entity.Student;
 import org.springframework.validation.Errors;

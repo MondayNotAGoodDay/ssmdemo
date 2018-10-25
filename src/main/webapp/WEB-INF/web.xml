@@ -7,8 +7,8 @@
         xmlns="http://java.sun.com/xml/ns/javaee"
         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-		http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-        version="2.5">
+		http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+        version="3.0">
   <display-name>Archetype Created Web Application</display-name>
 
   <!-- MVC Servlet -->
@@ -20,6 +20,14 @@
       <param-value>classpath:/mvc-*.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
+    <!--<multipart-config>
+      &lt;!&ndash; 临时路径的位置：指定文件的绝对目录，上传文件将会临时写入该目录中 &ndash;&gt;
+      <location>/tmp/feng/upload</location>
+      &lt;!&ndash; 上传文件的最大容量(以字节为单位)默认是无限制 &ndash;&gt;
+      <max-file-size>2097152</max-file-size>
+      &lt;!&ndash; 整个请求的最大容量(以字节为单位)默认无限制 &ndash;&gt;
+      <max-request-size>4194304</max-request-size>
+    </multipart-config>-->
   </servlet>
   <servlet-mapping>
     <servlet-name>dispatcherServlet</servlet-name>
@@ -55,4 +63,14 @@
     <filter-name>encodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+
+  <!--<filter>
+    <description>登陆过滤</description>
+    <filter-name>loginFilter</filter-name>
+    <filter-class>com.feng.common.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>loginFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>-->
 </web-app>

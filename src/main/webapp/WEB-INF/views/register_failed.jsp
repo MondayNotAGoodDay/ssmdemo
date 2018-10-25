@@ -15,6 +15,6 @@
 </head>
 <body>
     <h1>注册失败,该用户名已被注册</h1>
-    <button value="返回" id="return" onclick="document.location.href='/views/index.jsp'"></button>
+    <button value="返回" id="return" onclick="document.location.href='index.jsp'"></button>
 </body>
 </html>

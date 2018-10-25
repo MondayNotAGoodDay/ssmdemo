@@ -1,4 +1,4 @@
-package com.feng.converter;
+package com.feng.common.converter;
 
 import org.springframework.core.convert.converter.Converter;
 import java.text.ParseException;

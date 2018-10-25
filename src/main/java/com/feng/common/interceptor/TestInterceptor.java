@@ -1,4 +1,4 @@
-package com.feng.interceptor;
+package com.feng.common.interceptor;
 
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;

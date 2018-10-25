@@ -2,16 +2,14 @@ package com.feng.entity;
 
 import lombok.Data;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 
 @Data
 public class Student {
     private int id;
 
-    @NotNull(message = "{student.name.isNull}")
+    @NotNull(message = " name can't be null")
+    @Size(min = 6 , max = 12 , message = "姓名必须大于{min},小于{max}")
     private String name;
 
     @Min(value = 18, message = "{student.age.range}")

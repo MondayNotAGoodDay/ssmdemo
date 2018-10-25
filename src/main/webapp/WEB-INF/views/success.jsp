@@ -5,6 +5,10 @@
   Time: 3:00 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,26 +16,9 @@
 <html>
 <head>
     <title>login successfully</title>
-    <style>
-        .error{
-            color: red;
-        }
-    </style>
 </head>
 
 <body>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
-%>
-
-    <c:if test="{allErrors}!=null">
-        <c:forEach var="errors" items="${allErrors}">
-            <p color="red">${errors.defaultMessage}</p><br/>
-        </c:forEach>
-    </c:if>
-
-    <br>
     basePath:       <%= basePath %><br>
     ctx:            ${pageContext.request.contextPath}
     <br>
@@ -42,12 +29,20 @@
     user's pwd: =   ${user.password}<br>
     user's username=${user.username}<br>
 
-    <sf:form method="post" commandName="student" >
-        <sf:input path="id" /><br>
-        <sf:input path="name"/><br>
-        <sf:input path="age"/><sf:errors cssClass="error" path="age"/><br>
-        <sf:input path="sex"/><br>
-
-    </sf:form>
+    <c:out value="shit" escapeXml="true">fuck you</c:out>
+    <table border="1px">
+        <caption>学生列表</caption>
+        <tr>
+            <th>id</th><th>姓名</th><th>年龄</th><th>性别</th>
+        </tr>
+        <c:forEach items="${list}" var="stua">
+            <tr>
+                <td>${stua.id}</td>
+                <td>${stua.name}</td>
+                <td>${stua.age}</td>
+                <td>${stua.sex}</td>
+            </tr>
+        </c:forEach>
+    </table>
 </body>
 </html>
